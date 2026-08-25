@@ -1,3 +1,4 @@
+// V4.1: Mobile Scrollfix – neue Frage statt Seitenanfang fokussieren
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const KEY='shk-din-trainer-v2';
 let saved={total:0,correct:0,streak:0,wrong:{},extra:[]};
@@ -40,7 +41,7 @@ function show(){
  const prefix=st.mode==='exam'?'Prüfung ':st.mode==='practice'?'Praxisfall ':'Frage ';$('#progressText').textContent=prefix+(st.i+1)+'/'+st.queue.length;$('#bar').style.width=((st.i+1)/st.queue.length*100)+'%';
  const img=$('#practiceImage');if(q.image){img.src=q.image;img.classList.add('show');img.alt='Praxisfall: '+(q.topic||'SHK');img.onerror=()=>{img.classList.remove('show');console.warn('Bild nicht gefunden:',q.image)}}else{img.classList.remove('show');img.removeAttribute('src')}
  $('#question').textContent=q.q;const order=shuffle(q.options.map((v,i)=>({v,i})));$('#options').innerHTML=order.map((x,j)=>`<label class="opt"><input type="radio" name="ans" value="${x.i}"><span><b>${String.fromCharCode(65+j)})</b> ${escapeHtml(x.v)}</span></label>`).join('');
- $('#feedback').className='feedback hidden';$('#feedback').innerHTML='';$('#check').disabled=false;$('#next').disabled=true;$('#check').textContent=st.mode==='exam'?'Antwort speichern':'Antwort prüfen';window.scrollTo({top:0,behavior:'smooth'})
+ $('#feedback').className='feedback hidden';$('#feedback').innerHTML='';$('#check').disabled=false;$('#next').disabled=true;$('#check').textContent=st.mode==='exam'?'Antwort speichern':'Antwort prüfen';requestAnimationFrame(()=>$('#question').scrollIntoView({behavior:'smooth',block:'center'}))
 }
 $('#form').addEventListener('submit',e=>{
  e.preventDefault();if(st.locked)return;const p=$('input[name="ans"]:checked');if(!p){$('#feedback').className='feedback neutral';$('#feedback').textContent='Bitte zuerst eine Antwort auswählen.';return}
