@@ -1,30 +1,19 @@
-SHK Meister – DIN Trainer (PWA)
+SHK Meister – DIN Trainer v3 mit Praxisbildern
 
-Enthaltene Module:
-- DIN 1988
-- DIN 1986
-- DIN EN 806-2, 806-3, 806-5
-- DIN EN 12056-1, 12056-2, 12056-3, 12056-4
+NEU:
+- Modus "Praxisbilder"
+- 10 bildbasierte Fehlerfälle
+- 4 Trinkwasser-Fälle
+- 3 Abwasser-Fälle
+- 2 Gas/TRGI-Fälle
+- 1 Heizungsbefüllung / DIN EN 1717
+- Bilder werden für Offline-Nutzung gecacht
+- Bestehender localStorage-Key bleibt unverändert, damit Lernstand und importierte Fragen erhalten bleiben.
 
-Weitere Fragen hinzufügen:
-1. In der App auf „Fragenpaket importieren“ tippen.
-2. Eine JSON-Datei mit einer Liste von Fragen auswählen.
-3. Die Fragen werden lokal im Browser gespeichert.
-
-Für echte Installation auf dem Home-Bildschirm muss die PWA über HTTPS bereitgestellt werden.
-Nach dem ersten Laden funktioniert sie offline.
-
-Format für neue Fragen:
-[
-  {
-    "family":"DIN EN 1717",
-    "norm":"DIN EN 1717",
-    "prio":"P1",
-    "topic":"Sicherungseinrichtungen",
-    "q":"Frage ...?",
-    "options":["Richtig","Falsch 1","Falsch 2","Falsch 3"],
-    "answer":0,
-    "explanation":"Kurze Erklärung.",
-    "source":"DIN EN 1717:Ausgabe, Abschnitt ..."
-  }
-]
+UPDATE AUF GITHUB PAGES:
+1. Alle Dateien dieses Ordners in das Stammverzeichnis deines bestehenden GitHub-Repositories hochladen.
+2. Vorhandene index.html, app.js und sw.js ersetzen.
+3. practice.js und praxis-01.webp bis praxis-10.webp neu hinzufügen.
+4. Commit changes.
+5. GitHub Pages kurz aktualisieren lassen.
+6. App in Safari öffnen und einmal neu laden.

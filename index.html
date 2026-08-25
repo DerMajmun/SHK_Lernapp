@@ -27,8 +27,10 @@ button{border:0;padding:10px 13px;font-weight:750;cursor:pointer;background:#e8e
 .tags{display:flex;gap:6px;flex-wrap:wrap}.tag{font-size:12px;font-weight:800;border-radius:999px;padding:5px 8px;background:#edf1ed}
 @media(prefers-color-scheme:dark){.tag{background:#283129}}
 .q{font-size:clamp(19px,4vw,25px);font-weight:800;line-height:1.32;margin:18px 0}
+.practiceImage{display:none;width:100%;max-height:64vh;object-fit:contain;border-radius:14px;border:1px solid #d5ddd6;background:#eef1ed;margin:14px 0}
+.practiceImage.show{display:block}
 .opt{display:flex;gap:10px;padding:12px;border:1px solid #d5ddd6;border-radius:12px;margin:8px 0;cursor:pointer}
-@media(prefers-color-scheme:dark){.opt{border-color:#384239}}
+@media(prefers-color-scheme:dark){.opt{border-color:#384239}.practiceImage{border-color:#384239;background:#242c25}}
 .opt input{width:19px;height:19px;margin-top:2px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .feedback{padding:13px;border-radius:12px;margin-top:14px;line-height:1.45}.ok{background:#e8f2e9}.bad{background:#f5e8e6}.neutral{background:#edf0ed}
 @media(prefers-color-scheme:dark){.ok{background:#1c3321}.bad{background:#382321}.neutral{background:#252c27}}
@@ -42,14 +44,15 @@ button{border:0;padding:10px 13px;font-weight:750;cursor:pointer;background:#e8e
 <div class="app">
   <section class="card">
     <h1>SHK Meister – DIN Trainer</h1>
-    <div class="sub">Prüfungsorientierte Lernfragen aus deinen Norm-Unterlagen. Neue Fragenpakete kannst du später per JSON importieren.</div>
+    <div class="sub">Normfragen, Prüfungstraining und jetzt auch Praxisbilder zum Fehlerfinden.</div>
+    <div class="small" style="margin-top:7px">Version 3 · Praxisbilder</div>
   </section>
   <section class="card">
     <div class="grid">
       <div class="stat"><b id="score">0%</b><span>Trefferquote</span></div>
       <div class="stat"><b id="answered">0</b><span>beantwortet</span></div>
       <div class="stat"><b id="streak">0</b><span>Serie</span></div>
-      <div class="stat"><b id="count">0</b><span>Fragen</span></div>
+      <div class="stat"><b id="count">0</b><span>Fragen/Fälle</span></div>
     </div>
   </section>
   <section class="card">
@@ -57,6 +60,7 @@ button{border:0;padding:10px 13px;font-weight:750;cursor:pointer;background:#e8e
       <button class="mode active" data-mode="learn">Lernen</button>
       <button class="mode" data-mode="exam">20-Fragen-Prüfung</button>
       <button class="mode" data-mode="weak">Fehlertraining</button>
+      <button class="mode" data-mode="practice">📷 Praxisbilder</button>
     </div>
     <div class="controls">
       <select id="family"><option value="Alle">Alle Normenreihen</option></select>
@@ -69,20 +73,22 @@ button{border:0;padding:10px 13px;font-weight:750;cursor:pointer;background:#e8e
       <input id="fileInput" class="hidden" type="file" accept=".json,application/json">
       <button class="danger" id="reset">Statistik löschen</button>
     </div>
-    <div class="importBox small">Für weitere DIN-Normen kann ein neues <b>questions-pack.json</b> importiert werden. Die vorhandenen Fragen bleiben erhalten.</div>
+    <div class="importBox small">Im Modus <b>📷 Praxisbilder</b> bekommst du Installationsbilder und musst den Fehler erkennen. Deine importierten Fragenpakete bleiben weiterhin gespeichert.</div>
   </section>
   <section id="quiz" class="card">
     <div class="tags"><span class="tag" id="normTag"></span><span class="tag" id="prioTag"></span><span class="tag" id="topicTag"></span></div>
     <div class="progress"><span id="bar"></span></div>
     <div class="small" id="progressText"></div>
+    <img id="practiceImage" class="practiceImage" alt="SHK Praxisfall – finde den Fehler">
     <div class="q" id="question"></div>
     <form id="form"><div id="options"></div><div class="actions"><button class="primary" id="check" type="submit">Antwort prüfen</button><button id="next" type="button" disabled>Nächste Frage</button></div></form>
     <div id="feedback" class="feedback hidden" aria-live="polite"></div>
   </section>
   <section id="result" class="card hidden"></section>
-  <section class="card small"><b>Hinweis:</b> Lernhilfe, kein Ersatz für den vollständigen Normtext. Vor Planung oder Ausführung immer den aktuell anzuwendenden Normstand prüfen.</section>
+  <section class="card small"><b>Hinweis:</b> Lernhilfe, kein Ersatz für Normtext oder Regelwerk. Praxisbilder sind didaktische Illustrationen. Vor Planung oder Ausführung immer den aktuell anzuwendenden Normstand, Herstellerangaben und Vorgaben des Versorgers prüfen.</section>
 </div>
 <script src="questions.js"></script>
+<script src="practice.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

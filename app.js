@@ -1,23 +1,25 @@
-
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const KEY='shk-din-trainer-v2';
 let saved={total:0,correct:0,streak:0,wrong:{},extra:[]};
 try{saved={...saved,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){}
-let all=[...window.BASE_QUESTIONS,...(saved.extra||[])];
+let all=[...(window.BASE_QUESTIONS||[]),...(saved.extra||[])];
+const practice=[...(window.PRACTICE_CASES||[])];
 const st={mode:'learn',family:'Alle',norm:'Alle',prio:'Alle',queue:[],i:0,locked:false,exam:[]};
 const shuffle=a=>{let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
 function persist(){localStorage.setItem(KEY,JSON.stringify(saved))}
-function families(){return [...new Set(all.map(x=>x.family))].sort()}
+function catalog(){return st.mode==='practice'?practice:all}
+function families(){return [...new Set(catalog().map(x=>x.family))].sort()}
 function syncFilters(){
   const fam=$('#family'); const old=st.family;
-  fam.innerHTML='<option value="Alle">Alle Normenreihen</option>'+families().map(x=>`<option>${x}</option>`).join('');
-  st.family=families().includes(old)?old:'Alle'; fam.value=st.family;
-  const norms=[...new Set(all.filter(x=>st.family==='Alle'||x.family===st.family).map(x=>x.norm))].sort();
+  const fl=families();
+  fam.innerHTML='<option value="Alle">'+(st.mode==='practice'?'Alle Bereiche':'Alle Normenreihen')+'</option>'+fl.map(x=>`<option>${x}</option>`).join('');
+  st.family=fl.includes(old)?old:'Alle'; fam.value=st.family;
+  const norms=[...new Set(catalog().filter(x=>st.family==='Alle'||x.family===st.family).map(x=>x.norm))].sort();
   const ns=$('#norm'); const on=st.norm;
   ns.innerHTML='<option value="Alle">Alle Normen</option>'+norms.map(x=>`<option>${x}</option>`).join('');
   st.norm=norms.includes(on)?on:'Alle'; ns.value=st.norm;
 }
-function basePool(){return all.filter(x=>(st.family==='Alle'||x.family===st.family)&&(st.norm==='Alle'||x.norm===st.norm)&&(st.prio==='Alle'||x.prio===st.prio))}
+function basePool(){return catalog().filter(x=>(st.family==='Alle'||x.family===st.family)&&(st.norm==='Alle'||x.norm===st.norm)&&(st.prio==='Alle'||x.prio===st.prio))}
 function pool(){
   let p=basePool();
   if(st.mode==='weak'){
@@ -30,11 +32,15 @@ function stats(){
   $('#score').textContent=saved.total?Math.round(saved.correct/saved.total*100)+'%':'0%';
   $('#answered').textContent=saved.total||0; $('#streak').textContent=saved.streak||0; $('#count').textContent=basePool().length;
 }
-function mode(m){st.mode=m;$$('.mode').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));start()}
+function mode(m){
+  st.mode=m;st.family='Alle';st.norm='Alle';
+  $$('.mode').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
+  syncFilters();start();
+}
 function start(){
   st.i=0;st.locked=false;st.exam=[];$('#result').classList.add('hidden');$('#quiz').classList.remove('hidden');
   let p=pool();
-  if(!p.length){$('#question').textContent=st.mode==='weak'?'Noch keine Fehler in diesem Filter.':'Keine Fragen in diesem Filter.';$('#options').innerHTML='';$('#check').disabled=true;$('#next').disabled=true;stats();return}
+  if(!p.length){$('#practiceImage').classList.remove('show');$('#practiceImage').removeAttribute('src');$('#question').textContent=st.mode==='weak'?'Noch keine Fehler in diesem Filter.':'Keine Fragen/Fälle in diesem Filter.';$('#options').innerHTML='';$('#check').disabled=true;$('#next').disabled=true;stats();return}
   st.queue=st.mode==='exam'?shuffle(p).slice(0,Math.min(20,p.length)):shuffle(p);show();stats();
 }
 function show(){
@@ -42,12 +48,18 @@ function show(){
   if(st.mode!=='exam'&&st.i>=st.queue.length){st.queue=shuffle(pool());st.i=0}
   const q=st.queue[st.i];st.cur=q;st.locked=false;
   $('#normTag').textContent=q.norm;$('#prioTag').textContent=q.prio;$('#topicTag').textContent=q.topic;
-  $('#progressText').textContent=(st.mode==='exam'?'Prüfung ':'Frage ')+(st.i+1)+'/'+st.queue.length;
-  $('#bar').style.width=((st.i+1)/st.queue.length*100)+'%';$('#question').textContent=q.q;
+  const prefix=st.mode==='exam'?'Prüfung ':st.mode==='practice'?'Praxisfall ':'Frage ';
+  $('#progressText').textContent=prefix+(st.i+1)+'/'+st.queue.length;
+  $('#bar').style.width=((st.i+1)/st.queue.length*100)+'%';
+  const img=$('#practiceImage');
+  if(q.image){img.src=q.image;img.classList.add('show');img.alt='Praxisfall '+(st.i+1)+': '+q.topic}
+  else{img.classList.remove('show');img.removeAttribute('src')}
+  $('#question').textContent=q.q;
   const order=shuffle(q.options.map((v,i)=>({v,i})));
   $('#options').innerHTML=order.map((x,j)=>`<label class="opt"><input type="radio" name="ans" value="${x.i}"><span><b>${String.fromCharCode(65+j)})</b> ${x.v}</span></label>`).join('');
   $('#feedback').className='feedback hidden';$('#feedback').innerHTML='';$('#check').disabled=false;$('#next').disabled=true;
   $('#check').textContent=st.mode==='exam'?'Antwort speichern':'Antwort prüfen';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 $('#form').addEventListener('submit',e=>{
   e.preventDefault();if(st.locked)return;const p=$('input[name="ans"]:checked');if(!p){$('#feedback').className='feedback neutral';$('#feedback').textContent='Bitte zuerst eine Antwort auswählen.';return}
@@ -55,7 +67,7 @@ $('#form').addEventListener('submit',e=>{
   if(ok){saved.correct=(saved.correct||0)+1;saved.streak=(saved.streak||0)+1}else{saved.streak=0;const k=q.norm+'|'+q.topic;saved.wrong[k]=(saved.wrong[k]||0)+1}
   persist();$$('input[name="ans"]').forEach(x=>x.disabled=true);$('#check').disabled=true;$('#next').disabled=false;
   if(st.mode==='exam'){st.exam.push({q,ok});$('#feedback').className='feedback neutral';$('#feedback').textContent='Antwort gespeichert. Auswertung nach der letzten Frage.'}
-  else{$('#feedback').className='feedback '+(ok?'ok':'bad');$('#feedback').innerHTML=`<b>${ok?'Richtig.':'Falsch.'}</b><br>${q.explanation}<div class="small" style="margin-top:7px">Quelle: ${q.source}</div>`}
+  else{$('#feedback').className='feedback '+(ok?'ok':'bad');$('#feedback').innerHTML=`<b>${ok?'Richtig.':'Falsch.'}</b><br>${q.explanation}<div class="small" style="margin-top:7px">Quelle/Regel: ${q.source}</div>`}
   stats();
 });
 $('#next').onclick=()=>{if(st.locked){st.i++;show()}};
@@ -80,7 +92,7 @@ $('#fileInput').onchange=async e=>{
     const data=JSON.parse(await f.text());const pack=Array.isArray(data)?data:data.questions;
     if(!Array.isArray(pack))throw new Error('Kein gültiges Fragenpaket');
     const valid=pack.filter(x=>x.family&&x.norm&&x.prio&&x.topic&&x.q&&Array.isArray(x.options)&&Number.isInteger(x.answer)&&x.explanation&&x.source);
-    saved.extra=[...(saved.extra||[]),...valid];persist();all=[...window.BASE_QUESTIONS,...saved.extra];syncFilters();start();alert(valid.length+' Fragen importiert.');
+    saved.extra=[...(saved.extra||[]),...valid];persist();all=[...(window.BASE_QUESTIONS||[]),...saved.extra];syncFilters();start();alert(valid.length+' Fragen importiert.');
   }catch(err){alert('Import fehlgeschlagen: '+err.message)}
   e.target.value='';
 };
