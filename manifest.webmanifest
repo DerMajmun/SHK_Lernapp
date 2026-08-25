@@ -1,11 +1,11 @@
 {
-  "name": "SHK Meister – DIN Trainer",
-  "short_name": "DIN Trainer",
-  "start_url": "./index.html",
+  "name": "SHK Meister Lernapp – Zentral",
+  "short_name": "SHK Meister",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#101410",
-  "theme_color": "#1f3a29",
-  "lang": "de",
+  "background_color": "#0c120e",
+  "theme_color": "#18271d",
   "icons": [
     {
       "src": "icon-192.png",

@@ -3,92 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1f3a29">
+<meta name="theme-color" content="#18271d">
 <link rel="manifest" href="manifest.webmanifest">
-<title>SHK Meister – DIN Trainer</title>
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>SHK Meister – Lernapp</title>
 <style>
 :root{color-scheme:light dark;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-body{margin:0;background:#f3f1ea;color:#172019}
-@media(prefers-color-scheme:dark){body{background:#101410;color:#edf3ed}}
-.app{max-width:980px;margin:auto;padding:16px}
-.card{background:#fff;border:1px solid #d7ddd7;border-radius:18px;padding:18px;margin-bottom:14px}
-@media(prefers-color-scheme:dark){.card{background:#1a211b;border-color:#354037}}
-h1{font-size:clamp(26px,6vw,38px);margin:0 0 8px}.sub{opacity:.72;line-height:1.45}
+*{box-sizing:border-box}body{margin:0;background:#f3f1ea;color:#172019}
+@media(prefers-color-scheme:dark){body{background:#0c120e;color:#edf3ed}}
+.app{max-width:1040px;margin:auto;padding:14px}.card{background:#fff;border:1px solid #d7ddd7;border-radius:18px;padding:18px;margin-bottom:14px}
+@media(prefers-color-scheme:dark){.card{background:#172019;border-color:#304037}}
+h1{font-size:clamp(26px,6vw,40px);margin:0 0 7px}.sub{opacity:.78;line-height:1.45}.version{display:inline-block;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e8efe9;font-weight:800;font-size:12px}
+@media(prefers-color-scheme:dark){.version{background:#263329}}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat{padding:10px;border-radius:12px;background:#eef1ed}
-@media(prefers-color-scheme:dark){.stat{background:#242c25}}
-.stat b{display:block;font-size:22px}
-.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-select,button{min-height:44px;border-radius:11px;font:inherit}
-select{padding:0 10px;border:1px solid #cbd3cc;background:transparent;color:inherit}
-button{border:0;padding:10px 13px;font-weight:750;cursor:pointer;background:#e8ece8;color:inherit}
-.primary{background:#28402f;color:#fff}.danger{background:#f2e4e2;color:#7a2923}
-@media(prefers-color-scheme:dark){button{background:#29312b}.primary{background:#d7e8da;color:#142018}.danger{background:#3a2826;color:#ffd6d1}}
-.modes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.mode.active{outline:2px solid #5f7c67}
-.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{font-size:12px;font-weight:800;border-radius:999px;padding:5px 8px;background:#edf1ed}
-@media(prefers-color-scheme:dark){.tag{background:#283129}}
-.q{font-size:clamp(19px,4vw,25px);font-weight:800;line-height:1.32;margin:18px 0}
-.practiceImage{display:none;width:100%;max-height:64vh;object-fit:contain;border-radius:14px;border:1px solid #d5ddd6;background:#eef1ed;margin:14px 0}
-.practiceImage.show{display:block}
-.opt{display:flex;gap:10px;padding:12px;border:1px solid #d5ddd6;border-radius:12px;margin:8px 0;cursor:pointer}
-@media(prefers-color-scheme:dark){.opt{border-color:#384239}.practiceImage{border-color:#384239;background:#242c25}}
-.opt input{width:19px;height:19px;margin-top:2px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.feedback{padding:13px;border-radius:12px;margin-top:14px;line-height:1.45}.ok{background:#e8f2e9}.bad{background:#f5e8e6}.neutral{background:#edf0ed}
-@media(prefers-color-scheme:dark){.ok{background:#1c3321}.bad{background:#382321}.neutral{background:#252c27}}
-.hidden{display:none}.small{font-size:12px;opacity:.7}.progress{height:7px;border-radius:999px;background:#e2e7e2;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;background:#36543e}
-@media(prefers-color-scheme:dark){.progress{background:#2b342d}.progress span{background:#b9d5bf}}
-.importBox{border:1px dashed #aeb8b0;border-radius:12px;padding:12px;margin-top:10px}
-@media(max-width:700px){.grid{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr}.app{padding:10px}}
+@media(prefers-color-scheme:dark){.stat{background:#242c25}}.stat b{display:block;font-size:22px}
+.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}select,button{min-height:44px;border-radius:11px;font:inherit}
+select{padding:0 10px;border:1px solid #cbd3cc;background:transparent;color:inherit}button{border:0;padding:10px 13px;font-weight:750;cursor:pointer;background:#e8ece8;color:inherit}
+.primary{background:#28402f;color:#fff}.danger{background:#f2e4e2;color:#7a2923}.update{background:#dfe9f6;color:#183959}
+@media(prefers-color-scheme:dark){button{background:#29312b}.primary{background:#d7e8da;color:#142018}.danger{background:#3a2826;color:#ffd6d1}.update{background:#24364a;color:#dcecff}}
+.modes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.mode.active{outline:2px solid #70917a}.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:800;border-radius:999px;padding:5px 8px;background:#edf1ed}@media(prefers-color-scheme:dark){.tag{background:#283129}}
+.q{font-size:clamp(19px,4vw,25px);font-weight:800;line-height:1.32;margin:18px 0}.practiceImage{display:none;width:100%;max-height:68vh;object-fit:contain;border-radius:14px;border:1px solid #d5ddd6;background:#eef1ed;margin:14px 0}
+.practiceImage.show{display:block}@media(prefers-color-scheme:dark){.practiceImage{border-color:#384239;background:#242c25}}
+.opt{display:flex;gap:10px;padding:12px;border:1px solid #d5ddd6;border-radius:12px;margin:8px 0;cursor:pointer}@media(prefers-color-scheme:dark){.opt{border-color:#384239}}.opt input{width:19px;height:19px;margin-top:2px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.feedback{padding:13px;border-radius:12px;margin-top:14px;line-height:1.48}.ok{background:#e8f2e9}.bad{background:#f5e8e6}.neutral{background:#edf0ed}
+@media(prefers-color-scheme:dark){.ok{background:#1c3321}.bad{background:#382321}.neutral{background:#252c27}}.hidden{display:none}.small{font-size:12px;opacity:.73}
+.progress{height:7px;border-radius:999px;background:#e2e7e2;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;background:#36543e}
+@media(prefers-color-scheme:dark){.progress{background:#2b342d}.progress span{background:#b9d5bf}}.info{border:1px dashed #aeb8b0;border-radius:12px;padding:12px;margin-top:10px}#packInfo{margin-top:8px}
+@media(max-width:700px){.grid{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr}.app{padding:9px}.card{padding:14px}}
 </style>
 </head>
 <body>
 <div class="app">
-  <section class="card">
-    <h1>SHK Meister – DIN Trainer</h1>
-    <div class="sub">Normfragen, Prüfungstraining und jetzt auch Praxisbilder zum Fehlerfinden.</div>
-    <div class="small" style="margin-top:7px">Version 3 · Praxisbilder</div>
-  </section>
-  <section class="card">
-    <div class="grid">
-      <div class="stat"><b id="score">0%</b><span>Trefferquote</span></div>
-      <div class="stat"><b id="answered">0</b><span>beantwortet</span></div>
-      <div class="stat"><b id="streak">0</b><span>Serie</span></div>
-      <div class="stat"><b id="count">0</b><span>Fragen/Fälle</span></div>
-    </div>
-  </section>
-  <section class="card">
-    <div class="modes">
-      <button class="mode active" data-mode="learn">Lernen</button>
-      <button class="mode" data-mode="exam">20-Fragen-Prüfung</button>
-      <button class="mode" data-mode="weak">Fehlertraining</button>
-      <button class="mode" data-mode="practice">📷 Praxisbilder</button>
-    </div>
-    <div class="controls">
-      <select id="family"><option value="Alle">Alle Normenreihen</option></select>
-      <select id="norm"><option value="Alle">Alle Normen</option></select>
-      <select id="prio"><option value="Alle">P1 + P2</option><option>P1</option><option>P2</option></select>
-    </div>
-    <div class="actions">
-      <button class="primary" id="restart">Neue Runde</button>
-      <button id="importBtn">Fragenpaket importieren</button>
-      <input id="fileInput" class="hidden" type="file" accept=".json,application/json">
-      <button class="danger" id="reset">Statistik löschen</button>
-    </div>
-    <div class="importBox small">Im Modus <b>📷 Praxisbilder</b> bekommst du Installationsbilder und musst den Fehler erkennen. Deine importierten Fragenpakete bleiben weiterhin gespeichert.</div>
-  </section>
-  <section id="quiz" class="card">
-    <div class="tags"><span class="tag" id="normTag"></span><span class="tag" id="prioTag"></span><span class="tag" id="topicTag"></span></div>
-    <div class="progress"><span id="bar"></span></div>
-    <div class="small" id="progressText"></div>
-    <img id="practiceImage" class="practiceImage" alt="SHK Praxisfall – finde den Fehler">
-    <div class="q" id="question"></div>
-    <form id="form"><div id="options"></div><div class="actions"><button class="primary" id="check" type="submit">Antwort prüfen</button><button id="next" type="button" disabled>Nächste Frage</button></div></form>
-    <div id="feedback" class="feedback hidden" aria-live="polite"></div>
-  </section>
-  <section id="result" class="card hidden"></section>
-  <section class="card small"><b>Hinweis:</b> Lernhilfe, kein Ersatz für Normtext oder Regelwerk. Praxisbilder sind didaktische Illustrationen. Vor Planung oder Ausführung immer den aktuell anzuwendenden Normstand, Herstellerangaben und Vorgaben des Versorgers prüfen.</section>
+<section class="card"><h1>SHK Meister – Lernapp</h1><div class="sub">Zentrale Version: DIN/EN, AVBWasserV, Trinkwasser, Abwasser, Heizung/Hydraulik, Wärmepumpe und TRGI sind fest in der App eingebaut.</div><span class="version">V4 ZENTRAL · 400 Fragen · 61 Bildfälle</span></section>
+<section class="card"><div class="grid"><div class="stat"><b id="score">0%</b><span>Trefferquote</span></div><div class="stat"><b id="answered">0</b><span>beantwortet</span></div><div class="stat"><b id="streak">0</b><span>Serie</span></div><div class="stat"><b id="count">0</b><span>im Filter</span></div></div></section>
+<section class="card">
+<div class="modes"><button class="mode active" data-mode="learn">Lernen</button><button class="mode" data-mode="exam">20-Fragen-Prüfung</button><button class="mode" data-mode="weak">Fehlertraining</button><button class="mode" data-mode="practice">📷 Praxisbilder</button></div>
+<div class="controls"><select id="family"><option value="Alle">Alle Bereiche</option></select><select id="norm"><option value="Alle">Alle Normen</option></select><select id="prio"><option value="Alle">P1 + P2</option><option>P1</option><option>P2</option></select></div>
+<div class="actions"><button class="primary" id="restart">Neue Runde</button><button id="importBtn">Zusatzpaket importieren</button><input id="fileInput" class="hidden" type="file" accept=".json,application/json"><button class="update" id="updateBtn">↻ App aktualisieren</button><button class="danger" id="reset">Statistik löschen</button></div>
+<div class="info small"><b>Zentraler Fragenstand:</b> Die 400 Kernfragen kommen direkt von GitHub und sind deshalb auf PC und iPhone gleich. Lokale Zusatzpakete bleiben möglich, sind aber weiterhin nur auf dem jeweiligen Gerät gespeichert.<div id="packInfo"></div></div>
+</section>
+<section id="quiz" class="card"><div class="tags"><span class="tag" id="normTag"></span><span class="tag" id="prioTag"></span><span class="tag" id="topicTag"></span></div><div class="progress"><span id="bar"></span></div><div class="small" id="progressText"></div><img id="practiceImage" class="practiceImage" alt="SHK Praxisfall"><div class="q" id="question"></div><form id="form"><div id="options"></div><div class="actions"><button class="primary" id="check" type="submit">Antwort prüfen</button><button id="next" type="button" disabled>Nächste Frage</button></div></form><div id="feedback" class="feedback hidden" aria-live="polite"></div></section>
+<section id="result" class="card hidden"></section>
+<section class="card small"><b>Hinweis:</b> Lernhilfe, kein Ersatz für den aktuellen Originaltext der Normen/Regelwerke. Praxisbilder sind didaktische Illustrationen. Für reale Planung, Ausführung und Prüfung immer aktuellen Normstand, Herstellerangaben sowie Vorgaben von Netz-/Wasserversorgern beachten.</section>
 </div>
-<script src="questions.js"></script>
-<script src="practice.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+<script src="questions.js"></script><script src="app.js"></script>
+</body></html>
