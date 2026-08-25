@@ -1,0 +1,18 @@
+[
+  {
+    "family": "Beispiel",
+    "norm": "Neue DIN",
+    "prio": "P1",
+    "topic": "Thema",
+    "q": "Beispielfrage?",
+    "options": [
+      "Richtige Antwort",
+      "Falsch A",
+      "Falsch B",
+      "Falsch C"
+    ],
+    "answer": 0,
+    "explanation": "Beispiel-Erklärung.",
+    "source": "Quelle/Abschnitt"
+  }
+]
