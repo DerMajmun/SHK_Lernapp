@@ -1,0 +1,342 @@
+[
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 01",
+    "prio": "P2",
+    "topic": "Fehlersuche – Heizkörperanschluss",
+    "q": "Welcher Fehler ist beim unteren rechten Heizkörper im Schema am ehesten dargestellt?",
+    "options": [
+      "Der Rücklauf des Heizkörpers ist hydraulisch falsch angebunden und verursacht eine Kurzschlussströmung",
+      "Das Ausdehnungsgefäß ist zu groß",
+      "Der Kesselvorlauf müsste blau statt rot sein",
+      "Der Heizkörper dürfte nur auf der obersten Etage eingebaut sein"
+    ],
+    "answer": 0,
+    "explanation": "Am unteren rechten Heizkörper ist die Anbindung fehlerhaft. Dadurch wird Vorlauf und Rücklauf ungünstig verbunden, was zu Fehlströmung bzw. Kurzschlussströmung führen kann.",
+    "source": "SHK-Meistertraining – Strangschema / Fehlersuche",
+    "image": "meister-schema-01-fehlanschluss-heizkoerper.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 01",
+    "prio": "P2",
+    "topic": "Hydraulische Folgen",
+    "q": "Welche Auswirkung ist bei einem so falsch angebundenen Heizkörper am wahrscheinlichsten?",
+    "options": [
+      "Ein Teilstrom nimmt den hydraulisch kurzen Weg, andere Heizflächen werden unterversorgt und die Spreizung verschlechtert sich",
+      "Der Anlagenfülldruck steigt automatisch auf das Doppelte",
+      "Das Trinkwasser wird unmittelbar verunreinigt",
+      "Alle Heizkörper werden dadurch grundsätzlich zu heiß"
+    ],
+    "answer": 0,
+    "explanation": "Fehlanschlüsse verursachen häufig Kurzschlussströmungen. Das stört den hydraulischen Abgleich, verschlechtert die Temperaturverteilung und kann andere Verbraucher benachteiligen.",
+    "source": "SHK-Meistertraining – Hydraulischer Abgleich",
+    "image": "meister-schema-01-fehlanschluss-heizkoerper.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 02",
+    "prio": "P2",
+    "topic": "Kaskadenanlage",
+    "q": "Welcher Vorteil ist für die dargestellte Kaskade aus zwei Wärmeerzeugern typisch?",
+    "options": [
+      "Bessere Teillastanpassung und Redundanz bei Ausfall eines Geräts",
+      "Es wird kein Sicherheitsventil mehr benötigt",
+      "Die Anlage arbeitet ohne Umwälzpumpen",
+      "Warmwasserbereitung ist in Kaskaden grundsätzlich nicht möglich"
+    ],
+    "answer": 0,
+    "explanation": "Kaskadenanlagen verbessern die Modulation im Teillastbetrieb und erhöhen die Betriebssicherheit. Fällt ein Gerät aus, kann das andere die Versorgung oft teilweise aufrechterhalten.",
+    "source": "SHK-Meistertraining – Kaskadierung Wärmeerzeuger",
+    "image": "meister-schema-02-kaskade-puffer-trennung.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 02",
+    "prio": "P2",
+    "topic": "Hydraulische Entkopplung",
+    "q": "Welche Hauptaufgabe hat das im Schema zwischen Erzeuger-/Speicherseite und Verbraucherkreisen erkennbare Trenn- bzw. Entkopplungselement?",
+    "options": [
+      "Hydraulische Entkopplung von Erzeugerkreis und Verbraucherkreisen",
+      "Enthärtung des Trinkwassers",
+      "Verbrennungsluftversorgung des Kessels",
+      "Abführung von Kondensat in die Kanalisation"
+    ],
+    "answer": 0,
+    "explanation": "Hydraulische Weichen bzw. Trennspeicher oder Verteiler dienen dazu, unterschiedliche Volumenströme von Erzeuger- und Verbraucherseite voneinander zu entkoppeln.",
+    "source": "SHK-Meistertraining – Hydraulische Weiche / Trennung",
+    "image": "meister-schema-02-kaskade-puffer-trennung.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 03",
+    "prio": "P2",
+    "topic": "Biomasse / Rücklauftemperaturanhebung",
+    "q": "Warum ist bei Festbrennstoff- oder Pelletanlagen eine Rücklauftemperaturanhebung besonders wichtig?",
+    "options": [
+      "Zum Schutz vor Kondensation, Versottung und Korrosionsschäden im Wärmeerzeuger",
+      "Damit der Heizkörper rückwärts durchströmt wird",
+      "Um das Trinkwasser in den Heizkreis einzuspeisen",
+      "Damit das Membran-Ausdehnungsgefäß eingespart werden kann"
+    ],
+    "answer": 0,
+    "explanation": "Bei Biomassekesseln verhindert eine ausreichend hohe Rücklauftemperatur Taupunktunterschreitungen und schützt den Wärmeerzeuger vor Korrosion und Betriebsproblemen.",
+    "source": "SHK-Meistertraining – Biomassehydraulik",
+    "image": "meister-schema-03-pellet-puffer-speicher.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 03",
+    "prio": "P2",
+    "topic": "Pufferspeicher",
+    "q": "Welche Funktion erfüllt der Pufferspeicher in dieser Anlage am treffendsten?",
+    "options": [
+      "Er nimmt Überschusswärme auf, verbessert Laufzeiten und entkoppelt Erzeugung von Verbrauch",
+      "Er ersetzt alle Sicherheitsarmaturen",
+      "Er dient ausschließlich der Trinkwasserenthärtung",
+      "Er ist nur ein dekoratives Bauteil ohne hydraulische Funktion"
+    ],
+    "answer": 0,
+    "explanation": "Pufferspeicher glätten Lastspitzen, verbessern die Taktung des Wärmeerzeugers und ermöglichen eine zeitliche Entkopplung von Wärmeerzeugung und Wärmeabgabe.",
+    "source": "SHK-Meistertraining – Speichertechnik",
+    "image": "meister-schema-03-pellet-puffer-speicher.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 04",
+    "prio": "P2",
+    "topic": "Unterschiedliche Temperaturniveaus",
+    "q": "Warum benötigt der Fußbodenheizkreis in einer kombinierten Anlage mit Heizkörperkreis in der Regel eine eigene Temperaturregelung bzw. Mischgruppe?",
+    "options": [
+      "Weil Fußbodenheizungen meist mit deutlich niedrigerem Vorlauftemperaturniveau betrieben werden",
+      "Weil Heizkörper grundsätzlich keinen Rücklauf besitzen",
+      "Weil der Trinkwasserspeicher sonst implodiert",
+      "Weil Pumpen nur in Mischkreisen zulässig sind"
+    ],
+    "answer": 0,
+    "explanation": "Heizkörper- und Fußbodenheizkreise arbeiten oft mit unterschiedlichen Temperatur- und Volumenstromanforderungen. Die Fußbodenheizung braucht meist eine niedrigere Vorlauftemperatur.",
+    "source": "SHK-Meistertraining – Mischerkreise / FBH",
+    "image": "meister-schema-04-kessel-heizkreise-boiler.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 04",
+    "prio": "P2",
+    "topic": "Warmwasserbereitung",
+    "q": "Welche Regelstrategie ist bei Anlagen mit Heizkreisen und separater Speicherladung typisch, wenn Warmwasser schnell bereitgestellt werden soll?",
+    "options": [
+      "Speicherladevorrang bzw. Warmwasservorrang",
+      "Abschaltung aller Pumpen für 24 Stunden",
+      "Dauerhafte Öffnung aller Sicherheitsventile",
+      "Parallele Einspeisung von Trinkwasser in den Heizkreis"
+    ],
+    "answer": 0,
+    "explanation": "Beim Speicherladevorrang wird die Wärmeerzeugerleistung zeitweise vorrangig der Warmwasserbereitung zugeführt, um den Speicher schnell auf Solltemperatur zu bringen.",
+    "source": "SHK-Meistertraining – Speicherladung / Regelung",
+    "image": "meister-schema-04-kessel-heizkreise-boiler.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 05",
+    "prio": "P2",
+    "topic": "Heizungsbefüllung",
+    "q": "Warum ist eine fachgerecht aufgebaute Füllkombination zwischen Trinkwassernetz und Heizungsanlage wichtig?",
+    "options": [
+      "Sie ermöglicht kontrolliertes Befüllen und schützt das Trinkwassernetz vor Rückwirkungen",
+      "Sie ersetzt den Wärmeerzeuger",
+      "Sie reduziert automatisch die Heizlast des Gebäudes",
+      "Sie macht den hydraulischen Abgleich überflüssig"
+    ],
+    "answer": 0,
+    "explanation": "Beim Befüllen müssen Druckverhältnisse und Trinkwasserschutz beachtet werden. Geeignete Armaturen und Sicherungseinrichtungen verhindern Rückfließen oder Rückdrücken in das Trinkwassernetz.",
+    "source": "SHK-Meistertraining – Heizungsbefüllung / Trinkwasserschutz",
+    "image": "meister-schema-05-heizung-hydraulik-befuellung.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 05",
+    "prio": "P2",
+    "topic": "Mischerkreis",
+    "q": "Welche Hauptaufgabe hat das motorische Mischventil im Fußbodenheizkreis?",
+    "options": [
+      "Es mischt Vor- und Rücklauf zur bedarfsgerechten Vorlauftemperatur des Heizkreises",
+      "Es misst den Gasanschlussdruck",
+      "Es entlüftet den Heizkörperkreis selbsttätig",
+      "Es dient nur der optischen Kennzeichnung des Strangs"
+    ],
+    "answer": 0,
+    "explanation": "Ein Mischventil regelt die Vorlauftemperatur des Niedertemperaturkreises, indem es heißes Wasser aus dem Vorlauf mit kühlerem Rücklaufwasser mischt.",
+    "source": "SHK-Meistertraining – Mischerkreisregelung",
+    "image": "meister-schema-05-heizung-hydraulik-befuellung.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 06",
+    "prio": "P2",
+    "topic": "Mehrgeschossige Anlage",
+    "q": "Warum ist in mehrgeschossigen Heizungsanlagen ein hydraulischer Abgleich besonders wichtig?",
+    "options": [
+      "Damit alle Etagen die berechneten Volumenströme erhalten und weder Über- noch Unterversorgung entsteht",
+      "Damit das Gebäude keine Schwerkraft mehr hat",
+      "Damit keine Ausdehnungsgefäße benötigt werden",
+      "Damit Heizkörper nur noch mit Kaltwasser betrieben werden können"
+    ],
+    "answer": 0,
+    "explanation": "Ohne hydraulischen Abgleich werden nahe oder hydraulisch günstige Verbraucher oft überversorgt, während weiter entfernte oder höher gelegene Stränge zu wenig Volumenstrom erhalten.",
+    "source": "SHK-Meistertraining – Hydraulischer Abgleich im Bestand",
+    "image": "meister-schema-06-mehrgeschoss-riser.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 06",
+    "prio": "P2",
+    "topic": "Entlüftung",
+    "q": "An welcher Stelle ist ein automatischer Entlüfter hydraulisch besonders sinnvoll?",
+    "options": [
+      "Am höchsten Punkt der Anlage bzw. am Hochpunkt des Steigestrangs",
+      "Nur am tiefsten Punkt des Kellers",
+      "Ausschließlich direkt am Gaszähler",
+      "Nur hinter dem Trinkwasserfilter"
+    ],
+    "answer": 0,
+    "explanation": "Luft sammelt sich an Hochpunkten. Deshalb sind dort Entlüftungseinrichtungen besonders wirksam, um Luftpolster und Zirkulationsprobleme zu vermeiden.",
+    "source": "SHK-Meistertraining – Entlüftung / Hochpunkte",
+    "image": "meister-schema-06-mehrgeschoss-riser.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 07",
+    "prio": "P2",
+    "topic": "Solarthermie",
+    "q": "Warum ist im Solarkreis eine Rückflussverhinderung bzw. Schwerkraftbremse sinnvoll?",
+    "options": [
+      "Damit nachts keine ungewollte Schwerkraftzirkulation und Rückkühlung des Speichers auftritt",
+      "Damit der Solarkollektor schwarz bleibt",
+      "Damit das Trinkwasser direkt durch den Kollektor fließt",
+      "Damit die Heizkreispumpe im Winter einfriert"
+    ],
+    "answer": 0,
+    "explanation": "Ohne Rückflussverhinderung kann es insbesondere bei Stillstand der Pumpe zu unerwünschter Zirkulation und Wärmeverlusten kommen.",
+    "source": "SHK-Meistertraining – Solarkreis / Sicherheit",
+    "image": "meister-schema-07-heizung-solar.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 07",
+    "prio": "P2",
+    "topic": "Solarsicherheit",
+    "q": "Welche Aufgabe hat das Ausdehnungsgefäß im Solarkreis?",
+    "options": [
+      "Es nimmt die temperaturbedingte Volumenausdehnung des Wärmeträgermediums auf",
+      "Es erhöht die elektrische Leistung der Pumpe",
+      "Es ersetzt den Solarkollektor",
+      "Es dient der Gasdruckmessung"
+    ],
+    "answer": 0,
+    "explanation": "Im Solarkreis treten hohe Temperaturen und starke Volumenausdehnungen auf. Das Ausdehnungsgefäß stabilisiert den Druck und schützt die Anlage.",
+    "source": "SHK-Meistertraining – Solarthermie",
+    "image": "meister-schema-07-heizung-solar.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 08",
+    "prio": "P2",
+    "topic": "Mehrere Verbraucherkreise",
+    "q": "Warum ist die Aufteilung in mehrere Heizkreise mit eigenen Pumpen und Mischgruppen in komplexen Anlagen sinnvoll?",
+    "options": [
+      "Weil verschiedene Verbraucher unterschiedliche Temperatur- und Volumenstromanforderungen haben",
+      "Weil sonst kein Wasser mehr vorhanden wäre",
+      "Weil Heizkörper und Fußbodenheizung nur in getrennten Gebäuden erlaubt sind",
+      "Weil Mischgruppen gesetzlich immer vorgeschrieben sind, auch wenn nur ein Kreis existiert"
+    ],
+    "answer": 0,
+    "explanation": "Unterschiedliche Verbraucher – zum Beispiel Radiatoren, Flächenheizung oder Luftheizregister – benötigen oft unterschiedliche Vorlauftemperaturen und Regelkonzepte.",
+    "source": "SHK-Meistertraining – Verteil- und Mischersysteme",
+    "image": "meister-schema-08-heizung-sanitaer.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 08",
+    "prio": "P2",
+    "topic": "Puffer / Systemstabilität",
+    "q": "Welchen systemtechnischen Nutzen hat der große Speicher bzw. Puffer in dieser Anlage am ehesten?",
+    "options": [
+      "Er stabilisiert Volumenströme und Betriebszeiten und wirkt als Energiepuffer zwischen Erzeuger und Verbrauchern",
+      "Er ersetzt sämtliche Absperrarmaturen",
+      "Er sorgt dafür, dass kein MAG mehr erforderlich ist",
+      "Er dient ausschließlich als Kaltwasserbehälter"
+    ],
+    "answer": 0,
+    "explanation": "Ein größerer Speicher kann Energie zwischenspeichern, den Wärmeerzeuger entlasten und die Versorgung mehrerer Verbraucher hydraulisch beruhigen.",
+    "source": "SHK-Meistertraining – Speichertechnik / Systemkopplung",
+    "image": "meister-schema-08-heizung-sanitaer.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 09",
+    "prio": "P2",
+    "topic": "Plattenwärmetauscher",
+    "q": "Welche Aufgabe erfüllt der im Schema erkennbare Plattenwärmetauscher am sinnvollsten?",
+    "options": [
+      "Indirekter Wärmeübergang zwischen zwei hydraulisch getrennten Kreisen",
+      "Mechanische Reinigung des Abwassers",
+      "Erzeugung der Verbrennungsluft für den Kessel",
+      "Entlüftung des Schornsteins"
+    ],
+    "answer": 0,
+    "explanation": "Plattenwärmetauscher übertragen Wärme zwischen zwei Medien bzw. Kreisen, ohne dass diese sich direkt vermischen. Das ist hydraulisch und hygienisch oft sinnvoll.",
+    "source": "SHK-Meistertraining – Wärmeübertrager",
+    "image": "meister-schema-09-heizkreise-warmwasser.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 09",
+    "prio": "P2",
+    "topic": "Fehlströmungen",
+    "q": "Welche Störung droht typischerweise, wenn in verzweigten Warmwasser- und Heizkreisen Rückflussverhinderer oder saubere Strömungsführung fehlen?",
+    "options": [
+      "Unerwünschte Rückströmungen, Parasitärzirkulation und unklare Temperaturverhältnisse",
+      "Das Gebäude verliert sofort seine Heizflächen",
+      "Der Schornstein wird wasserdicht",
+      "Die Pumpe erzeugt automatisch Trinkwarmwasser ohne Speicher"
+    ],
+    "answer": 0,
+    "explanation": "Fehlende Rückflussverhinderer oder ungünstige Strömungswege verursachen häufig Fehlzirkulationen. Das verschlechtert Effizienz, Komfort und Regelbarkeit.",
+    "source": "SHK-Meistertraining – Fehlströmungen / Rückflussverhinderung",
+    "image": "meister-schema-09-heizkreise-warmwasser.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 10",
+    "prio": "P2",
+    "topic": "Fehlersuche – Befüllung",
+    "q": "Welcher Fehler ist an der dargestellten Heizungsbefüllung am ehesten zu erkennen?",
+    "options": [
+      "Zwischen Trinkwassernetz und Heizungsanlage besteht eine direkte Schlauchverbindung ohne ausreichende Sicherungseinrichtung",
+      "Das Ausdehnungsgefäß ist zu niedrig montiert",
+      "Der Heizkörper ist zu groß gezeichnet",
+      "Die Heizkreispumpe dürfte nur im Rücklauf sitzen"
+    ],
+    "answer": 0,
+    "explanation": "Eine dauerhafte oder ungesicherte direkte Verbindung zwischen Trinkwasser und Heizungsanlage ist aus Sicht des Trinkwasserschutzes unzulässig.",
+    "source": "SHK-Meistertraining – Trinkwasserschutz bei Heizungsbefüllung",
+    "image": "meister-schema-10-fehlerhafte-befuellung.png"
+  },
+  {
+    "family": "Praxisbilder Meister – Heizung & Hydraulik",
+    "norm": "Meisterschema 10",
+    "prio": "P2",
+    "topic": "Sicherungseinrichtungen",
+    "q": "Welche Maßnahme ist beim Befüllen einer Heizungsanlage aus dem Trinkwassernetz fachlich erforderlich?",
+    "options": [
+      "Eine geeignete Sicherungseinrichtung bzw. Systemtrennung entsprechend der Flüssigkeitskategorie",
+      "Ein offenes Rohrende ohne Armaturen",
+      "Dauerhaft montierter Füllschlauch ohne Absperrungen",
+      "Direkte Verbindung über einen Gartenschlauch ohne Rückflussverhinderer"
+    ],
+    "answer": 0,
+    "explanation": "Beim Befüllen ist der Schutz des Trinkwassers sicherzustellen. Dafür sind geeignete Sicherungsarmaturen bzw. Systemtrenner nach Anwendungsfall und Flüssigkeitskategorie nötig.",
+    "source": "SHK-Meistertraining – DIN EN 1717 / Befüllung",
+    "image": "meister-schema-10-fehlerhafte-befuellung.png"
+  }
+]

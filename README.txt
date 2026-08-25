@@ -1,19 +1,19 @@
-SHK Meister – DIN Trainer v3 mit Praxisbildern
+SHK Meisterpaket – Heizung & Hydraulik (20 Fragen)
 
-NEU:
-- Modus "Praxisbilder"
-- 10 bildbasierte Fehlerfälle
-- 4 Trinkwasser-Fälle
-- 3 Abwasser-Fälle
-- 2 Gas/TRGI-Fälle
-- 1 Heizungsbefüllung / DIN EN 1717
-- Bilder werden für Offline-Nutzung gecacht
-- Bestehender localStorage-Key bleibt unverändert, damit Lernstand und importierte Fragen erhalten bleiben.
+Inhalt:
+- 10 große/komplexere Schema-Bilder
+- 20 Fragen auf Meister-Niveau
+- Mischform aus Fehlersuche, Verständnisfragen und hydraulischer Bewertung
 
-UPDATE AUF GITHUB PAGES:
-1. Alle Dateien dieses Ordners in das Stammverzeichnis deines bestehenden GitHub-Repositories hochladen.
-2. Vorhandene index.html, app.js und sw.js ersetzen.
-3. practice.js und praxis-01.webp bis praxis-10.webp neu hinzufügen.
-4. Commit changes.
-5. GitHub Pages kurz aktualisieren lassen.
-6. App in Safari öffnen und einmal neu laden.
+So fügst du das Paket in die App ein:
+1. ZIP-Datei herunterladen und entpacken.
+2. Alle PNG-Dateien aus diesem Ordner in dein GitHub-Repository hochladen
+   (ins gleiche Verzeichnis wie index.html).
+3. Dateinamen NICHT ändern.
+4. In der App auf "Fragenpaket importieren" gehen.
+5. Die Datei "SHK_Meisterpaket_Heizung_Hydraulik_20Fragen.json" importieren.
+
+Hinweis:
+- Wenn die Bilddateien nicht im gleichen App-Verzeichnis liegen, erscheinen die Fragen zwar,
+  aber ohne Bild.
+- Das Paket ist für deine bestehende App-Version mit Bildunterstützung gedacht.
