@@ -1,3 +1,4 @@
+// SHK DIN Trainer v3.1 – importierte Bildfragen auch im Praxisbilder-Modus
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const KEY='shk-din-trainer-v2';
 let saved={total:0,correct:0,streak:0,wrong:{},extra:[]};
@@ -7,7 +8,14 @@ const practice=[...(window.PRACTICE_CASES||[])];
 const st={mode:'learn',family:'Alle',norm:'Alle',prio:'Alle',queue:[],i:0,locked:false,exam:[]};
 const shuffle=a=>{let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
 function persist(){localStorage.setItem(KEY,JSON.stringify(saved))}
-function catalog(){return st.mode==='practice'?practice:all}
+function catalog(){
+  if(st.mode==='practice'){
+    // feste Praxisfälle + alle importierten Fragen, die ein Bild besitzen
+    const importedImageCases = all.filter(x => x.image);
+    return [...practice, ...importedImageCases];
+  }
+  return all;
+}
 function families(){return [...new Set(catalog().map(x=>x.family))].sort()}
 function syncFilters(){
   const fam=$('#family'); const old=st.family;
